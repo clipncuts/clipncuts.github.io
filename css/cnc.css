@@ -1,5 +1,6 @@
-#navbar-brand {
-  font-weight: bold;
-  color: red;
-  text-shadow: 0px 1px 1px rgba(0,0,0,.5);
+#home.ng-enter{
+  animation: fadeIn 1s;
+}
+#home.ng-leave{
+  animation: fadeOut 1s;
 }

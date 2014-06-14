@@ -3,9 +3,11 @@
 <head>
   <link rel="stylesheet" href="css/bootstrap-simplex.css"/>
   <link rel="stylesheet" href="css/jumbotron-narrow.css"/>
+  <link rel="stylesheet" href="css/animate.css"/>
   <link rel="stylesheet" href="css/cnc.css"/>
   <script type="text/javascript" src="js/angular.js"></script>
   <script type="text/javascript" src="js/angular-route.js"></script>
+  <script type="text/javascript" src="js/angular-animate.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <title>Clip-n-Cuts</title>
@@ -15,14 +17,65 @@
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#/home">Home</a></li>
-        <li><a href="#/services">Services</a></li>
-        <li><a href="#/contact">Contact</a></li>
+        <li ng-class="homePillClass"><a ng-click="selectHome()">Home</a></li>
+        <li ng-class="servicesPillClass"><a ng-click="selectServices()">Services</a></li>
       </ul>
       <h3 class="text-muted">Clip-n-Cuts</h3>
     </div>
 
-    <ng-include src="partials/home.html"></ng-include>
+    <div ng-show="showHome" id="home">
+      <div class="jumbotron">
+        <h1>Clip-n-Cuts</h1>
+        <p class="lead">Hair salon</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Visit us today</a></p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-4">
+          <h4>Location</h4>
+          <p>
+            <address>
+            2300 McDermott Rd. #600<br>
+            Plano, TX 75025<br>
+            <span class="glyphicon glyphicon-earphone"></span> (972) 747-9406
+            </address>
+          </p>
+          <h4>Hours</h4>
+          <p>
+            Weekdays: 9am - 7pm<br>
+            Saturday: 9am - 5pm<br>
+            Sunday: 11am - 4pm<br>
+          </p>
+        </div>
+
+        <div class="col-lg-8">
+        <iframe
+          width="450"
+          height="250"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDRSlXUMDyoZ-ZwcbdgoDOOgxHI9jn-gcQ&zoom=12&q=Clip-n-cuts+2300+McDermott+Rd.+Plano,+TX+75025">
+        </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="showServices" id="services">
+      <ul>
+        <li>Men's Cut: $12</li>
+        <li>Women's Cut: $14</li>
+        <li>Women's Cut with Shampoo 'n' Style: $20+</li>
+        <li>Kid's Cut (12 'n' under): $11</li>
+        <li>Kid's Cut 'n' Shampoo: $14</li>
+        <li>Kid's Cut with Shampoo 'n' Blow Dry: $18+</li>
+        <li>Bang Trim: $5</li>
+        <li>Extra Service: $6</li>
+        <li>Eyebrow Wax: $8</li>
+        <li>Color: $45+</li>
+        <li>Cap Highlight: $35+</li>
+        <li>Foil Highlight: $50+</li>
+        <li>Japanese Hair Straightening: $150+</li>
+      </ul>
+    </div>
 
     <div class="footer">
       <p>&copy; Clip-n-Cuts</p>
